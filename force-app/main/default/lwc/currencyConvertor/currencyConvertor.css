@@ -1,0 +1,45 @@
+.card{
+    max-width: 520px;
+    text-align: center;
+    background:#0b2451;
+    margin: auto;
+    color: white;
+    
+    border-radius: 25px;
+    padding: 10px;
+}
+.container{
+    min-height:100vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.customButton{
+    padding: 5px;
+    background: orange;
+    color: #0b2451;
+    font-size: 20px;
+}
+.financeapp{
+    background-image:url(/sfsites/c/resource/currencyAppBackground);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.baseline{
+    align-items: baseline;
+}
+.icon{
+    transform: rotate(45deg);
+    background-color: orange;
+    color: #0b2451;
+}
+.result{
+    font-size:20px;
+    font-weight: bold;
+    color:lightblue
+}
+.resultTo{
+    font-size:20px;
+    font-weight: bold;
+    color:orange;
+}

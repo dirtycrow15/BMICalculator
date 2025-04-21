@@ -1,0 +1,60 @@
+<template>
+    <div class="financeapp">
+        <div class="container">
+            <div class="card">
+                <h1 class="slds-text-heading_large slds-var-m-bottom_large
+                slds-text-align_center slds-text-color_inverse">Currency Converter</h1>
+                <img src={imageUrl} alt="Currency Converter" class="slds-var-m-bottom_small" height="150"  width="150"/>
+            <form onsubmit={handleConvertCurrency}>
+                <lightning-input 
+                    label="Amount" 
+                    value={amount} 
+                    name="amount"
+                    variant="label-hidden"
+                    type="number"
+                    placeholder="Amount"
+                    onchange={handleChange}
+                    class="slds-var-m-bottom_large"></lightning-input>
+                <div class="slds-grid slds-gutters baseline slds-m-vertical_xlarge">
+                    <div class="slds-col">
+                        <lightning-combobox 
+                            label="From Currency"
+                            value={fromCurrency} 
+                            options={countryList}
+                            variant="label-hidden" 
+                            name="fromCurrency"
+                            onchange={handleChange}
+                            class="slds-var-m-bottom_large"></lightning-combobox>
+                    </div>
+                    <div class="slds-col slds-text-align_center">
+                        <lightning-icon 
+                        icon-name="action:change_record_type" 
+                        alternative-text="Convert Icon" 
+                        size="small"
+                        class="slds-var-m-bottom_large icon"></lightning-icon>
+                    </div>
+                    <div class="slds-col">
+                        <lightning-combobox 
+                        label="To Currency" 
+                        value={toCurrency} 
+                        options={countryList} 
+                        variant="label-hidden"
+                        name="toCurrency"
+                        onchange={handleChange}
+                        class="slds-var-m-bottom_large"></lightning-combobox>  
+                    </div>
+                </div>
+                <template if:true={result}>
+                <div>
+                    <p class="slds-var-m-bottom_large result">{amount} {fromCurrency} = <span class="resultTo">{result} {toCurrency}</span></p>
+                </div>
+                </template>
+                <template if:false={result}>
+                    <p class="slds-text-color_error slds-var-m-bottom_large">{errorMessage}</p>
+                </template>
+                <button class="slds-button slds-button_neutral slds-button_stretch slds-var-m-bottom_large customButton">Convert</button>
+            </form>
+            </div>
+        </div>
+    </div>
+</template>
