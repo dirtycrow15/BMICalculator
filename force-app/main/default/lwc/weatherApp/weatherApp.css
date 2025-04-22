@@ -1,0 +1,118 @@
+.app{ 
+    background: #0b2451;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: 30px;
+    min-height:100vh;
+}
+.card{
+    max-width: 400px;
+    min-width: 375px;
+    margin: auto;
+    border-radius: 20px;
+    background: white;
+}
+
+h1{
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+    padding: 10px;
+    text-align: center;
+    border-bottom-style: outset
+}
+
+input{
+    justify-content: center;
+    width:100%;
+    border-radius: 10px;
+    outline:none;
+    margin-bottom: 10px;
+    font-size: 20px;
+    text-align: center;
+    border:2px solid #ccc;
+    color:black;
+    padding:10px
+}
+.button{
+    padding: 10px;
+    border-radius: 10px;
+    outline:none;
+    width: 100%;
+    background: red;
+    font-size: 20px;
+    color:black;
+}
+section{
+    padding: 10px;
+}
+.temp{
+    background: white;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    border-bottom-style: outset
+}
+.info{
+    background: white;
+    color: black;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+.feels{
+    background: white;
+    color: black;
+    text-align: center;
+    padding: 45px;
+    border-right-style: outset;
+    display:grid
+}
+
+.humidity{
+    background: white;
+    color: black;
+    text-align: center;
+    padding: 45px;
+    display:grid
+}
+.weatherImg{
+    max-width: 125px;
+}
+.img{
+    justify-self: center;
+}
+
+.loadText{
+    margin: 12px;
+    background: #d4edda;
+    color: #155724;
+    font-size: 20px;
+    padding: 12px;
+    border-radius: 12px;
+}
+
+.temperature{
+    font-size: 50px;
+    font-weight: bold;
+}
+.location{
+    display: flex; align-items: center;justify-content: center;
+}
+.errorMessage{
+    margin: 12px;
+    background: #f8d7da;
+    color: #721c24;
+    font-size: 20px;
+    padding: 12px;
+    border-radius: 12px;
+}
+.hover{
+    cursor: pointer;
+}
+.back{
+    align-self: center;
+    padding: 10px;
+}

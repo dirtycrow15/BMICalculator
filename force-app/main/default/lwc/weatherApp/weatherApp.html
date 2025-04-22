@@ -1,0 +1,49 @@
+<template>
+    <div class="app">
+        <div class="card">
+            <template if:true={result}>
+                <img class="back hover" src={arrowbackIcon} alt="Arrow Back Icon" onclick={handleBackClick}/>
+            </template>
+            <h1>Weather App</h1>
+            <template if:true={loadingText}>
+                <div class="loadText">{loadingText}</div>
+            </template>
+            <template if:true={errorMessage}>
+                <div class="errorMessage">{errorMessage}</div>
+            </template>
+            <template if:false={response}>
+                <form onsubmit={handleSubmit}>
+                    <section class="slds-p-around_large">
+                        <input name="city" type="text" value={city} onchange={handleCityChange}  placeholder="Enter City Name" class="slds-var-m-bottom_large slds-var-m-top_large"/>
+                        <button  type="submit" class="button slds-var-m-top_large slds-var-m-bottom_large">Submit</button>
+                    </section>
+                    
+                </form>
+            </template>
+            <template if:true={response}>
+                <section class="slds-p-around_large">
+                    <div class="temp">
+                        <img src={weatherIcon} alt="Weather Icon" class="weatherImg"/>
+                        <div class="slds-var-m-bottom_medium temperature">{response.temp}°c</div>
+                        <div class="slds-var-m-bottom_medium" style="font-size: 20px;">{response.description}</div>
+                        <div class="slds-var-m-bottom_medium location">
+                            <img src={mapIcon} alt="Weather Icon"/>
+                            <div style="font-size: 20px;">{response.city} {response.country}</div>
+                        </div>
+                    </div>
+                    <div class="info">
+                        <div class="feels">
+                            <img src={thermometerIcon} alt="Thermometer Icon" class="slds-var-m-bottom_medium img"/>
+                            Feels like:{response.feels_like}°c
+                        </div>
+                        <div class="humidity">
+                            <img src={dropletIcon} alt="dropletIcon Icon" class="slds-var-m-bottom_medium img"/>
+                            Humidity: {response.humidity}%
+                        </div>
+                    </div>
+                    
+                </section>
+            </template>
+        </div>
+    </div>
+</template>
